@@ -1,0 +1,16 @@
+{
+  "name": "gpx-from-images",
+  "main": "./main.js",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "geoexif": "^1.0.0",
+    "moment": "^2.18.1",
+    "xml2js": "^0.4.17"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "gulp": "^3.9.1",
+    "gulp-pandoc": "^0.2.2"
+  }
+}

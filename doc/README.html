@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+</head>
+<body>
+<h1 id="gpxfromimages">GpxFromImages</h1>
+<p>Produces GPX from geo-tagged images.</p>
+<h2 id="install">Install</h2>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> clone https://github.com/JanisE/gpx-from-images.git
+<span class="kw">cd</span> gpx-from-images
+<span class="kw">npm</span> install --production</code></pre>
+<p>Now, it's installed in that particular folder. No instructions on how to do it globally.</p>
+<h3 id="development-notes">Development notes</h3>
+<p>Run <code>npm install</code> instead to include all additional dependencies used for testing and building.</p>
+<p><code>grunt</code> runs Grunt tasks (JSHint code correctness tests).</p>
+<p><code>gulp</code> runs Gulp tasks (generates some docs).</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>As you can see, to install, you need to run commands <code>git</code> and <code>npm</code>. To use: <code>node</code> (or <code>nodejs</code>). These have to be installed first if not already available. Node.js must be at least version 5 (<code>node --version</code>). I'm testing with version 6.10 though, so maybe even 5 won't work.</p>
+<p>For Windows users,</p>
+<ul>
+<li>for <code>git</code>, go to <a href="https://git-scm.com/">https://git-scm.com/</a>, &quot;Downloads for Windows&quot; and install;<br /></li>
+<li>for <code>node</code> and <code>npm</code>, go to <a href="https://nodejs.org/">https://nodejs.org/</a>, download and install (includes <code>npm</code>).</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p>You can get the usage help from the program by running <code>node main</code>.</p>
+<p>Note: NodeJS is available as <code>nodejs</code> in some distributions, as <code>node</code> in others.</p>
+<p>Usage examples:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">[<span class="kw">23</span>:56:56] janis@janis-desktop ~/Projekti/gps/GpxFromImages $ node main --source ./test/ImageFolder/
+<span class="kw">moment</span>(<span class="st">&quot;2017-06-19T00:01:03.620&quot;</span>) <span class="st">&#39;Starting...&#39;</span>
+<span class="kw">moment</span>(<span class="st">&quot;2017-06-19T00:01:03.624&quot;</span>) <span class="st">&#39;Files collected.&#39;</span>
+<span class="kw">moment</span>(<span class="st">&quot;2017-06-19T00:01:04.253&quot;</span>) <span class="st">&#39;Image #4 was just processed.&#39;</span>
+<span class="kw">moment</span>(<span class="st">&quot;2017-06-19T00:01:04.254&quot;</span>) <span class="st">&#39;Images processed.&#39;</span>
+<span class="kw">moment</span>(<span class="st">&quot;2017-06-19T00:01:04.276&quot;</span>) <span class="st">&#39;GPX built.&#39;</span>
+<span class="kw">&lt;?xml</span> version=<span class="st">&quot;1.0&quot;</span> encoding=<span class="st">&quot;UTF-8&quot;</span> standalone=<span class="st">&quot;yes&quot;</span>?<span class="kw">&gt;</span>
+<span class="kw">&lt;gpx</span> version=<span class="st">&quot;1.1&quot;</span> creator=<span class="st">&quot;GpxFromImages&quot;</span> xmlns=<span class="st">&quot;http://www.topografix.com/GPX/1/1&quot;</span> xmlns:xsi=<span class="st">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> xsi:schemaLocation=<span class="st">&quot;http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.topografix.com/GPX/Private/TopoGrafix/0/1 http://www.topografix.com/GPX/Private/TopoGrafix/0/1/topografix.xsd&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;trk&gt;</span>
+    <span class="kw">&lt;name&gt;</span>GPX from images<span class="kw">&lt;</span>/name<span class="kw">&gt;</span>
+    <span class="kw">&lt;trkseg&gt;</span>
+      <span class="kw">&lt;trkpt</span> lat=<span class="st">&quot;57.086664722&quot;</span> lon=<span class="st">&quot;24.125181389&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;time&gt;</span>2017-06-16T16:40:57.000Z<span class="kw">&lt;</span>/time<span class="kw">&gt;</span>
+      <span class="kw">&lt;</span>/<span class="kw">trkpt&gt;</span>
+      <span class="kw">&lt;trkpt</span> lat=<span class="st">&quot;57.086791389&quot;</span> lon=<span class="st">&quot;24.125384722&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;time&gt;</span>2017-06-16T16:41:03.000Z<span class="kw">&lt;</span>/time<span class="kw">&gt;</span>
+      <span class="kw">&lt;</span>/<span class="kw">trkpt&gt;</span>
+      <span class="kw">&lt;trkpt</span> lat=<span class="st">&quot;57.086880000&quot;</span> lon=<span class="st">&quot;24.125549722&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;time&gt;</span>2017-06-16T16:41:09.000Z<span class="kw">&lt;</span>/time<span class="kw">&gt;</span>
+      <span class="kw">&lt;</span>/<span class="kw">trkpt&gt;</span>
+      <span class="kw">&lt;trkpt</span> lat=<span class="st">&quot;57.086966389&quot;</span> lon=<span class="st">&quot;24.125808056&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;time&gt;</span>2017-06-16T16:41:17.000Z<span class="kw">&lt;</span>/time<span class="kw">&gt;</span>
+      <span class="kw">&lt;</span>/<span class="kw">trkpt&gt;</span>
+    <span class="kw">&lt;</span>/<span class="kw">trkseg&gt;</span>
+  <span class="kw">&lt;</span>/<span class="kw">trk&gt;</span>
+<span class="kw">&lt;</span>/<span class="kw">gpx&gt;</span>
+[<span class="kw">00</span>:01:04] janis@janis-desktop ~/Projekti/gps/GpxFromImages $ 
+
+[<span class="kw">23</span>:05:23] janis@janis-desktop ~/Projekti/gps/GpxFromImages $ node main --source /home/janis/Darbvirsma/Carnikava/100MSDCF/ --output ./test.gpx
+<span class="kw">moment</span>(<span class="st">&quot;2017-06-17T23:06:02.882&quot;</span>) <span class="st">&#39;Starting...&#39;</span>
+<span class="kw">moment</span>(<span class="st">&quot;2017-06-17T23:06:02.897&quot;</span>) <span class="st">&#39;Files collected.&#39;</span>
+<span class="kw">moment</span>(<span class="st">&quot;2017-06-17T23:06:08.303&quot;</span>) <span class="st">&#39;Image #94 was just processed.&#39;</span>
+<span class="kw">moment</span>(<span class="st">&quot;2017-06-17T23:06:21.453&quot;</span>) <span class="st">&#39;Image #294 was just processed.&#39;</span>
+<span class="kw">moment</span>(<span class="st">&quot;2017-06-17T23:06:35.207&quot;</span>) <span class="st">&#39;Image #494 was just processed.&#39;</span>
+<span class="kw">moment</span>(<span class="st">&quot;2017-06-17T23:06:49.526&quot;</span>) <span class="st">&#39;Image #694 was just processed.&#39;</span>
+<span class="kw">moment</span>(<span class="st">&quot;2017-06-17T23:07:03.542&quot;</span>) <span class="st">&#39;Image #894 was just processed.&#39;</span>
+<span class="kw">moment</span>(<span class="st">&quot;2017-06-17T23:07:17.603&quot;</span>) <span class="st">&#39;Image #1094 was just processed.&#39;</span>
+<span class="kw">moment</span>(<span class="st">&quot;2017-06-17T23:07:31.658&quot;</span>) <span class="st">&#39;Image #1294 was just processed.&#39;</span>
+<span class="kw">moment</span>(<span class="st">&quot;2017-06-17T23:07:45.649&quot;</span>) <span class="st">&#39;Image #1494 was just processed.&#39;</span>
+<span class="kw">moment</span>(<span class="st">&quot;2017-06-17T23:07:59.457&quot;</span>) <span class="st">&#39;Image #1694 was just processed.&#39;</span>
+<span class="kw">moment</span>(<span class="st">&quot;2017-06-17T23:08:13.461&quot;</span>) <span class="st">&#39;Image #1894 was just processed.&#39;</span>
+<span class="kw">moment</span>(<span class="st">&quot;2017-06-17T23:08:27.073&quot;</span>) <span class="st">&#39;Image #2094 was just processed.&#39;</span>
+<span class="kw">moment</span>(<span class="st">&quot;2017-06-17T23:08:40.754&quot;</span>) <span class="st">&#39;Image #2294 was just processed.&#39;</span>
+<span class="kw">moment</span>(<span class="st">&quot;2017-06-17T23:08:40.762&quot;</span>) <span class="st">&#39;Images processed.&#39;</span>
+<span class="kw">moment</span>(<span class="st">&quot;2017-06-17T23:08:40.790&quot;</span>) <span class="st">&#39;GPX built.&#39;</span>
+[<span class="kw">23</span>:08:40] janis@janis-desktop ~/Projekti/gps/GpxFromImages $ </code></pre>
+</body>
+</html>
